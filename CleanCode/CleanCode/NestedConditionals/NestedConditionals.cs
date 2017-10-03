@@ -5,11 +5,15 @@ namespace CleanCode.NestedConditionals
     public class Customer
     {
         public int LoyaltyPoints { get; set; }
+
+        public bool IsGoldCustomer() =>
+            LoyaltyPoints > 100;
     }
 
-    public class Reservation
+    #region Wrong
+    public class ReservationWrong
     {
-        public Reservation(Customer customer, DateTime dateTime)
+        public ReservationWrong(Customer customer, DateTime dateTime)
         {
             From = dateTime;
             Customer = customer;
@@ -53,4 +57,37 @@ namespace CleanCode.NestedConditionals
         }
 
     }
+    #endregion
+
+    #region Right
+    //Usinig ternary Operator, less code!
+    public class Reservation
+    {
+        public Reservation(Customer customer, DateTime dateTime)
+        {
+            From = dateTime;
+            Customer = customer;
+        }
+
+        public DateTime From { get; set; }
+        public Customer Customer { get; set; }
+        public bool IsCanceled { get; set; }
+
+        public void Cancel()
+        {
+            if (IsCancellatioPeriodOver())
+                throw new InvalidOperationException("It's too late to cancel.");
+
+            IsCanceled = true;
+        }
+
+        public bool LessThan(int maxHours) =>
+             (From - DateTime.Now).TotalHours < maxHours;
+
+        
+
+        public bool IsCancellatioPeriodOver() =>
+            (Customer.IsGoldCustomer() && LessThan(maxHours: 24)) || !Customer.IsGoldCustomer() && LessThan(maxHours: 48);
+    }
+    #endregion
 }
