@@ -6,3 +6,5 @@ C:\Projects\CleanCode\CleanCode\obj\Debug\CleanCode.pdb
 C:\Users\thiag\Desktop\CleanCode\CleanCode\CleanCode\obj\Debug\CleanCode.csprojResolveAssemblyReference.cache
 C:\Users\thiag\Desktop\CleanCode\CleanCode\CleanCode\obj\Debug\CleanCode.dll
 C:\Users\thiag\Desktop\CleanCode\CleanCode\CleanCode\obj\Debug\CleanCode.pdb
+C:\Users\thiag\Desktop\CleanCode\CleanCode\CleanCode\bin\Debug\CleanCode.dll
+C:\Users\thiag\Desktop\CleanCode\CleanCode\CleanCode\bin\Debug\CleanCode.pdb

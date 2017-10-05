@@ -12,11 +12,9 @@ namespace CleanCode.LongMethods
 {
     class DataTableToCsvMapper
     {
-        public System.IO.MemoryStream Map()
+        public System.IO.MemoryStream Map(DataTable dt)
         {
             MemoryStream ReturnStream = new MemoryStream();
-
-            DataTable dt = TableReader.GetDataTable();
 
             StreamWriter sw = new StreamWriter(ReturnStream);
 
